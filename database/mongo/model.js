@@ -1,12 +1,5 @@
 const mongoose = require('mongoose');
-
-mongoose.set('useCreateIndex', true);
-
-mongoose.Promise = global.Promise;
-
-mongoose.connect('mongodb://localhost/description', { useNewUrlParser: true })
-  // eslint-disable-next-line no-console
-  .then(() => console.log('Connected to mongodb'));
+const db = require('./index.js');
 
 const restaurantSchema = mongoose.Schema({
   restaurantId: { type: Number, unique: true },
